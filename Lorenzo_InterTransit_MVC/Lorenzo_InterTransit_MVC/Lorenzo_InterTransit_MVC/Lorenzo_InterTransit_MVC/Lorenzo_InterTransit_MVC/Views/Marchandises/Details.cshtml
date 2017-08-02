@@ -1,0 +1,82 @@
+﻿@model Lorenzo_InterTransit_MVC.Marchandise
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Marchandise</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_PDS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_PDS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_QTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_QTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_VALEURO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_VALEURO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_DOUANE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_DOUANE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_OBS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MARCH_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

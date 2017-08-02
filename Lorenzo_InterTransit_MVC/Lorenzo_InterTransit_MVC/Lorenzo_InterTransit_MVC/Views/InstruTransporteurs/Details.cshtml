@@ -1,0 +1,98 @@
+﻿@model Lorenzo_InterTransit_MVC.InstruTransporteur
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InstruTransporteur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DossierFclExport.FCL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DossierFclExport.FCL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAD.MAD_LIEU_ENLEV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAD.MAD_LIEU_ENLEV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transporteur.TRS_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transporteur.TRS_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_ADRS_EMPTG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_ADRS_EMPTG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_ADRS_LIVRAISION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_ADRS_LIVRAISION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_DATEARRIVEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_DATEARRIVEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_DATEDEPART)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_DATEDEPART)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_LIEU_ARRIVEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_LIEU_ARRIVEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_LIEU_DEPART)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_LIEU_DEPART)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSTR_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSTR_OBS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.INSTR_NUMOFR }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

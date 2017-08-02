@@ -1,0 +1,144 @@
+﻿@model Lorenzo_InterTransit_MVC.Booking
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompagnieMaritime.CM_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompagnieMaritime.CM_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DossierFclExport.FCL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DossierFclExport.FCL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_NOMNAVIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_NOMNAVIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_ETA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_ETA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_ETD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_ETD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_FORWARDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_FORWARDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_LOADTERM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_LOADTERM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_NUMVYG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_NUMVYG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTARRIVEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTARRIVEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTDEPART)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTDEPART)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTFORWARDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTFORWARDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_REFCOTATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_REFCOTATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_OBS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_REFBL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_REFBL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

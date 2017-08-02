@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DossierFclExport>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+            @using (Html.BeginForm("Index", "DossierFclExports", FormMethod.Get))
+            {@Html.TextBox("searchString", ViewBag.CurrentFilter as string) <input type="submit" value="Rechercher Dossier" class="btn btn-default" />}
+        </p>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FCL_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.CLT_NOMRAIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FCL_STATUT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FCL_DATEMAJ)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FCL_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client.CLT_NOMRAIS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FCL_STATUT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FCL_DATEMAJ)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FCL_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FCL_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FCL_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

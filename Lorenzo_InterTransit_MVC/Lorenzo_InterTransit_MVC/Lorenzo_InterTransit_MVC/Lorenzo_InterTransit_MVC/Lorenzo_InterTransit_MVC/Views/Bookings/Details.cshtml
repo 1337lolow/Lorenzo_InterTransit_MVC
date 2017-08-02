@@ -1,0 +1,138 @@
+﻿@model Lorenzo_InterTransit_MVC.Booking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompagnieMaritime.CM_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompagnieMaritime.CM_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DossierFclExport.FCL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DossierFclExport.FCL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_NOMNAVIRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_NOMNAVIRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_ETA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_ETA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_ETD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_ETD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_FORWARDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_FORWARDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_LOADTERM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_LOADTERM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_NUMVYG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_NUMVYG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTARRIVEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTARRIVEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTDEPART)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTDEPART)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_PORTFORWARDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_PORTFORWARDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_REFCOTATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_REFCOTATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_OBS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BKG_REFBL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BKG_REFBL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BKG_NUM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿@model Lorenzo_InterTransit_MVC.Marchandise
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Marchandise</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_PDS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_PDS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_QTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_QTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_VALEURO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_VALEURO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_DOUANE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_DOUANE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCH_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCH_OBS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

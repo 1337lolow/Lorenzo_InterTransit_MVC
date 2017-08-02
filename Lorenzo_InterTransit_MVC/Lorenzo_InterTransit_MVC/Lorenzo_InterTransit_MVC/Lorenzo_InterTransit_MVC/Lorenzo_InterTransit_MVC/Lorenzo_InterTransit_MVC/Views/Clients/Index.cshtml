@@ -1,0 +1,114 @@
+﻿@model Lorenzo_InterTransit_MVC.ViewModels.DossierDuClient
+
+@{
+    ViewBag.Title = "Index";
+}
+@*@using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+    {
+        <p>
+            Rechercher un Client via Raison Sociale : @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Rechercher" />
+        </p>
+    }*@
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h2>Index Clients</h2>
+        <p>
+            @Html.ActionLink("Ajouter un client", "Create")
+        </p>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                Ref Client
+            </th>
+            <th>
+                Raison Sociale
+            </th>
+            <th>
+                Pays
+            </th>
+            <th>
+                E-Mail
+            </th>
+            <th>
+                Telephone
+            </th>
+            <th>
+                Observation
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Clients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_REF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_NOMRAIS)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_PAYS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_MAIL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_TEL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CLT_OBS)
+                </td>
+                <td>
+                    @Html.ActionLink("Ses Dossiers", "Index", new { id = item.CLT_ID }) |
+                    @Html.ActionLink("Mettre à jour", "Edit", new { id = item.CLT_ID }) |
+                    @Html.ActionLink("Détails", "Details", new { id = item.CLT_ID }) |
+                    @Html.ActionLink("Suppr.", "Delete", new { id = item.CLT_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+@if (Model.DossierFclExports != null)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Les Dossiers du client sélectionné</h3>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Num Dossier FCL</th>
+                <th>Avancement du Dossier</th>
+                <th>Date Mise à Jour</th>
+            </tr>
+            @foreach (var item in Model.DossierFclExports)
+            {
+                string selectedRow = "";
+                if (item.FCL_ID.ToString() == ViewBag.FclID.ToString())
+                {
+                    selectedRow = "success";
+                }
+                <tr class="@selectedRow">
+                    <td>
+                        @item.FCL_ID
+                    </td>
+                    <td>
+                        @item.FCL_STATUT
+                    </td>
+                    <td>
+                        @item.FCL_DATEMAJ
+                    </td>
+                    <td>
+                        @Html.ActionLink("Résumé du dossier", "Details", new { Controller = "DossierFclExports", Action = "Details", id = item.FCL_ID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+

@@ -1,0 +1,112 @@
+﻿@model Lorenzo_InterTransit_MVC.CompagnieMaritime
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CompagnieMaritime</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_SIRET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_SIRET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_ADRESSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_ADRESSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_CP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_CP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_VILLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_PAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_PAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_TEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_TEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_TELPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_TELPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_FAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_FAX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CM_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CM_OBS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

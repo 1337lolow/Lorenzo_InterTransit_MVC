@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.LigneDeVente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Devi.DEVIS_REF_FORM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DossierFclExport.FCL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_DESC_ACHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_DESC_VENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_NAT_ACHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_PRIX_ACHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_PRIX_VENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACHVNT_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Devi.DEVIS_REF_FORM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DossierFclExport.FCL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_DESC_ACHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_DESC_VENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_NAT_ACHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_PRIX_ACHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_PRIX_VENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACHVNT_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ACHVNT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ACHVNT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ACHVNT_ID })
+        </td>
+    </tr>
+}
+
+</table>

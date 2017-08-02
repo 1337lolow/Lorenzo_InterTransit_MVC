@@ -1,0 +1,31 @@
+﻿@model Lorenzo_InterTransit_MVC.ViewModels.DossierFCLDetail
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Dossier FCL n° </h2>
+
+@using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+{
+    <table class="table">
+        <tr>
+            <th>
+                Ref Client
+            </th>
+            <th>
+                Raison  Sociale
+            </th>
+            <th>
+                E-Mail
+            </th>
+        </tr>
+        @foreach(var item in Model.Clients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(from ppl in db.Client select ppl  )
+                </td>
+            </tr>
+        }
+    </table>
+}

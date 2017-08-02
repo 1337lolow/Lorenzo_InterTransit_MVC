@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.Transporteur>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeTransporteur.TYTRANS_LIBELLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_NOMRAIS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_SIRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_ADRESSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_CP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_VILLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_PAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_MAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_TELPORT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_FAX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRS_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeTransporteur.TYTRANS_LIBELLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_NOMRAIS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_SIRET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_ADRESSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_CP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_VILLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_PAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_MAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_TELPORT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_FAX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRS_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TRS_REF }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TRS_REF }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TRS_REF })
+        </td>
+    </tr>
+}
+
+</table>

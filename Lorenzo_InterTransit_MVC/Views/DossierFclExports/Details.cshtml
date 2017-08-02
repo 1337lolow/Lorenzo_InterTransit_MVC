@@ -1,0 +1,358 @@
+﻿@model Lorenzo_InterTransit_MVC.ViewModels.DossierFCLDetail
+
+@{
+    ViewBag.Title = "Detail du dossier";
+}
+
+<h2>Details du dossier</h2>
+<div class="row">
+    <div class="col-md-6">
+        @if (Model.Clients != null)
+        {
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Le Client du dossier Sélectionné</h3>
+                </div>
+                <table class="table table-striped table-responsive">
+                    <tr>
+                        <th>Raison Sociale</th>
+                        <th>Siret</th>
+                        <th>E-Mail</th>
+                        <th>Observation</th>
+                    </tr>
+                    @foreach (var item in Model.Clients)
+                {
+                        <tr>
+                            <td>
+                                @item.CLT_NOMRAIS
+                            </td>
+                            <td>
+                                @item.CLT_SIRET
+                            </td>
+                            <td>
+                                @item.CLT_MAIL
+                            </td>
+                            <td>
+                                @item.CLT_OBS
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editer", "Edit", new { Controller = "Clients", Action = "Edit", id = item.CLT_ID })
+                                @Html.ActionLink("Details", "Details", new { Controller = "Clients", Action = "Details", id = item.CLT_ID })
+                                @Html.ActionLink("Supprimer", "Delete", new { Controller = "Clients", Action = "Delete", id = item.CLT_ID })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3>Résumé du dossier FCL</h3>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Num Dossier FCL</th>
+                    <th>Avancement du Dossier</th>
+                    <th>Date Mise à Jour</th>
+                </tr>
+                @foreach (var item in Model.DossierFclExports)
+            {
+                    <tr>
+                        <td>
+                            @item.FCL_ID
+                        </td>
+                        <td>
+                            @item.FCL_STATUT
+                        </td>
+                        <td>
+                            @item.FCL_DATEMAJ
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editer", "Edit", new { id = item.FCL_ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.FCL_ID }) |
+                            @Html.ActionLink("Supprimer", "Delete", new { id = item.FCL_ID })
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+@if (Model.Marchandises != null)
+            {
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Les Marchandises du dossier Sélectionné</h3>
+            <p>
+                @Html.ActionLink("Ajouter", "Create", new { Controller = "Marchandises", Action = "Create" })
+            </p>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Nature Marchandise</th>
+                <th>Description Marchandise</th>
+                <th>Valeur Marchandise</th>
+            </tr>
+            @foreach (var item in Model.Marchandises)
+            {
+                <tr>
+                    <td>
+                        @item.NatureMarchandise.NAT_MARCH_LIBELLE
+                    </td>
+                    <td>
+                        @item.MARCH_DESC
+                    </td>
+                    <td>
+                        @item.MARCH_VALEURO
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editer", "Edit", new { Controller = "Marchandises", Action = "Edit", id = item.MARCH_ID })
+                        @Html.ActionLink("Details", "Details", new { Controller = "Marchandises", Action = "Details", id = item.MARCH_ID })
+                        @Html.ActionLink("Supprimer", "Delete", new { Controller = "Marchandises", Action = "Delete", id = item.MARCH_ID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+    @if (Model.InstruTrans != null)
+    {
+        <div class="panel panel-info ">
+
+            <div class="panel-heading">
+                <h3>Les Instructions Transporteur</h3>
+                <p>
+                    @Html.ActionLink("Ajouter une Instru. Transporteur", "Create", new { Controller = "InstruTransporteurs", Action = "Create" }) -|-
+                    @Html.ActionLink("Ajouter un Transporteur", "Create", new { Controller = "Transporteurs", Action = "Create" }) -|-
+                    @Html.ActionLink("Ajouter une MAD", "Create", new { Controller = "MADs", Action = "Create" })
+                </p>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Num. Offre </th>
+                    <th>Transporteur</th>
+                    <th>Ville du Transporteur</th>
+                    <th>Lieu d'empotage</th>
+                    <th>Date d'empotage</th>
+                    <td>Lieu de Livraison</td>
+                    <th>ID MAD</th>
+                </tr>
+                @foreach (var item in Model.InstruTrans)
+                {
+                    <tr>
+                        <td>
+                            @item.INSTR_NUMOFR
+                        </td>
+                        <td>
+                            @item.Transporteur.TRS_NOMRAIS
+                        </td>
+                        <td>
+                            @item.Transporteur.TRS_VILLE
+                        </td>
+                        <td>
+                            @item.INSTR_ADRS_EMPTG
+                        </td>
+                        <td>
+                            @item.INSTR_DATEARRIVEE
+                        </td>
+                        <td>
+                            @item.INSTR_LIEU_ARRIVEE
+                        </td>
+                        <td>
+                            @item.MAD_ID
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editer", "Edit", new { Controller = "InstruTransporteurs", Action = "Edit", id = item.INSTR_NUMOFR })
+                            @Html.ActionLink("Details", "Details", new { Controller = "InstruTransporteurs", Action = "Details", id = item.INSTR_NUMOFR })
+                            @Html.ActionLink("Supprimer", "Delete", new { Controller = "Devis", Action = "Delete", id = item.INSTR_NUMOFR })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+<div class="row">
+    <div class="col-md-6">
+        @if (Model.Bookings != null)
+            {
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Les Bookings</h3>
+                    <p>
+                        @Html.ActionLink("Ajouter un Booking", "Create", new { Controller = "Bookings", Action = "Create" }) -|-
+                        @Html.ActionLink("Ajouter une Cie Maritime", "Create", new { Controller = "CompagnieMaritimes", Action = "Create" })
+                    </p>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Numéro de Booking</th>
+                        <th>cie. Maritime</th>
+                        <th>Ville de la cie.</th>
+                        <th>ETD</th>
+                        <th>ETA</th>
+                    </tr>
+                    @foreach (var item in Model.Bookings)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.BKG_NUM
+                            </td>
+                            <td>
+                                @item.CompagnieMaritime.CM_NOMRAIS
+                            </td>
+                            <td>
+                                @item.CompagnieMaritime.CM_VILLE
+                            </td>
+                            <td>
+                                @item.BKG_ETD
+                            </td>
+                            <td>
+                                @item.BKG_ETA
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editer", "Edit", new { Controller = "Bookings", Action = "Edit", id = item.BKG_NUM })
+                                @Html.ActionLink("Details", "Details", new { Controller = "Bookings", Action = "Details", id = item.BKG_NUM })
+                                @Html.ActionLink("Supprimer", "Delete", new { Controller = "Bookings", Action = "Delete", id = item.BKG_NUM })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+    </div>
+
+    <div class="col-md-6">
+        @if (Model.Conteneurs != null)
+            {
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Les Contenairs </h3>
+                    <p>
+                        @Html.ActionLink("Ajouter", "Create", new { Controller = "Conteneurs", Action = "Create" })
+                    </p>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Ref. Contenair</th>
+                        <th>Num Plombage</th>
+                        <th>Date Plombage</th>
+                    </tr>
+                    @foreach (var item in Model.Conteneurs)
+                {
+                        <tr>
+                            <td>
+                                @item.CTN_REF
+                            </td>
+                            <td>
+                                @item.CTN_PLOMBAGE
+                            </td>
+                            <td>
+                                @item.CTN_DATEPLOMBAGE
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editer", "Edit", new { Controller = "Conteneurs", Action = "Edit", id = item.CTN_REF })
+                                @Html.ActionLink("Details", "Details", new { Controller = "Conteneurs", Action = "Details", id = item.CTN_REF })
+                                @Html.ActionLink("Supprimer", "Delete", new { Controller = "Conteneurs", Action = "Delete", id = item.CTN_REF })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+    </div>
+</div>
+@if (Model.Devis != null)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Devis</h3>
+            <p>
+                @Html.ActionLink("Ajouter", "Create", new { Controller = "Devis", Action = "Create" })
+            </p>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Numéro Devis</th>
+                <th>Total Achat</th>
+                <th>Taux de Marge</th>
+                <th>Total Vente</th>
+                <th>Observations</th>
+            </tr>
+            @foreach (var item in Model.Devis)
+            {
+                <tr>
+                    <td>
+                        @item.DEVIS_ID
+                    </td>
+                    <td>
+                        @item.DEVIS_TOTALACHAT
+                    </td>
+                    <td>
+                        @item.DEVIS_TAUX_MRG
+                    </td>
+                    <td>
+                        @item.DEVIS_TOTALVENTE
+                    </td>
+                    <td>
+                        @item.DEVIS_OBS
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editer", "Edit", new { Controller = "Devis", Action = "Edit", id = item.DEVIS_ID })
+                        @Html.ActionLink("Details", "Details", new { Controller = "Devis", Action = "Details", id = item.DEVIS_ID })
+                        @Html.ActionLink("Supprimer", "Delete", new { Controller = "Devis", Action = "Delete", id = item.DEVIS_ID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+@if (Model.LigneDeVentes != null)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Details Devis</h3>
+            <p>
+                @Html.ActionLink("Ajouter", "Create", new { Controller = "LigneDeVentes", Action = "Create", id = Model.DossierFclExports.FirstOrDefault().FCL_ID })
+            </p>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Descr. Achat</th>
+                <th>Prix Achat</th>
+                <th>Descr. Vente</th>
+                <th>Prix Vente</th>
+                <th>Observations</th>
+            </tr>
+            @foreach (var item in Model.LigneDeVentes)
+            {
+                <tr>
+                    <td>
+                        @item.ACHVNT_DESC_ACHAT
+                    </td>
+                    <td>
+                        @item.ACHVNT_PRIX_ACHAT
+                    </td>
+                    <td>
+                        @item.ACHVNT_DESC_VENTE
+                    </td>
+                    <td>
+                        @item.ACHVNT_PRIX_VENTE
+                    </td>
+                    <td>
+                        @item.ACHVNT_OBS
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { Controller = "LigneDeVentes", Action = "Details", id = item.ACHVNT_ID })
+                        @Html.ActionLink("Supprimer", "Delete", new { Controller = "LigneDeVentes", Action = "Delete", id = item.ACHVNT_ID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+    
+

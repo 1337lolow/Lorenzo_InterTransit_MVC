@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.Conteneur>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Booking.FCL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeTC.TYTC_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTN_PLOMBAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTN_DATEPLOMBAGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTN_REFCOX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTN_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Booking.FCL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeTC.TYTC_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTN_PLOMBAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTN_DATEPLOMBAGE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTN_REFCOX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTN_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CTN_REF }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CTN_REF }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CTN_REF })
+        </td>
+    </tr>
+}
+
+</table>

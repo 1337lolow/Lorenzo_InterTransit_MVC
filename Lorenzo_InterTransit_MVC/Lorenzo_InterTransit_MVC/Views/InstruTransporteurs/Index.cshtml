@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.InstruTransporteur>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DossierFclExport.FCL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAD.MAD_LIEU_ENLEV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transporteur.TRS_NOMRAIS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_ADRS_EMPTG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_ADRS_LIVRAISION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_DATEARRIVEE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_DATEDEPART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_LIEU_ARRIVEE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_LIEU_DEPART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSTR_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DossierFclExport.FCL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAD.MAD_LIEU_ENLEV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transporteur.TRS_NOMRAIS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_ADRS_EMPTG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_ADRS_LIVRAISION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_DATEARRIVEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_DATEDEPART)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_LIEU_ARRIVEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_LIEU_DEPART)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSTR_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.INSTR_NUMOFR }) |
+            @Html.ActionLink("Details", "Details", new { id=item.INSTR_NUMOFR }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.INSTR_NUMOFR })
+        </td>
+    </tr>
+}
+
+</table>

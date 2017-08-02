@@ -1,0 +1,66 @@
+﻿@model Lorenzo_InterTransit_MVC.Conteneur
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Conteneur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking.FCL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking.FCL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeTC.TYTC_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeTC.TYTC_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTN_PLOMBAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTN_PLOMBAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTN_DATEPLOMBAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTN_DATEPLOMBAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTN_REFCOX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTN_REFCOX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTN_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTN_OBS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CTN_REF }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

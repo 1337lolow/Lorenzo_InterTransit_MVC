@@ -1,0 +1,120 @@
+﻿@model Lorenzo_InterTransit_MVC.Transporteur
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Transporteur</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeTransporteur.TYTRANS_LIBELLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeTransporteur.TYTRANS_LIBELLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_SIRET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_SIRET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_ADRESSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_ADRESSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_CP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_CP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_VILLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_PAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_PAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_TEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_TEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_TELPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_TELPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_FAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_FAX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRS_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRS_OBS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

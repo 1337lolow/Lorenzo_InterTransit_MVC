@@ -1,0 +1,112 @@
+﻿@model Lorenzo_InterTransit_MVC.Devi
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Devi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_ASSURANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_ASSURANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_REF_FORM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_REF_FORM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_TARIF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_TARIF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_TAUX_CHG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_TAUX_CHG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_TAUX_MRG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_TAUX_MRG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_TOTALACHAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_TOTALACHAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_TOTALVENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_TOTALVENTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_ETAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_ETAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_REGLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_REGLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEVIS_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEVIS_OBS)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

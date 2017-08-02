@@ -1,0 +1,117 @@
+﻿@model Lorenzo_InterTransit_MVC.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_REF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_REF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_NOMRAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_NOMRAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_SIRET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_SIRET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_ADRESSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_ADRESSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_CP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_CP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_VILLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_VILLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_PAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_PAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_MAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_MAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_TEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_TEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_TELPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_TELPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_FAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_FAX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLT_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLT_OBS)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CLT_ID }) |
+    @Html.ActionLink("Créer Un Dossier à partir de ce Client", "Create", "DossierFclExports") |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

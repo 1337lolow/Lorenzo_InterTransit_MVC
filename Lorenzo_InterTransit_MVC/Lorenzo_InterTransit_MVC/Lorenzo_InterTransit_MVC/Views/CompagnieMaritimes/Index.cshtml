@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.CompagnieMaritime>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_NOMRAIS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_SIRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_ADRESSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_CP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_VILLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_PAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_MAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_TELPORT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_FAX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CM_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_NOMRAIS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_SIRET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_ADRESSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_CP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_VILLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_PAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_MAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_TELPORT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_FAX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CM_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CM_REF }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CM_REF }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CM_REF })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,166 @@
+﻿@model BLL.ViewModels.DevisCompletVM
+
+@{
+    ViewBag.Title = "Devis Complet";
+}
+
+<h2>Details du Devis n° @Html.Label(Model.Devis.DEVIS_ID.ToString())</h2>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Détails Devis</h3>
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_ID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_ID)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_ASSURANCE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_ASSURANCE)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_DATE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_DATE)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_REF_FORM)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_REF_FORM)
+                </dd>
+             
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_ETAT)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_ETAT)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Devis.DEVIS_REGLE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Devis.DEVIS_REGLE)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-xs-6">
+            <h3>Informations du client</h3>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_NOMRAIS)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_NOMRAIS)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_SIRET)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_SIRET)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_ADRESSE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_ADRESSE)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_CP)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_CP)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_VILLE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_VILLE)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LeClientDuDevis.CLT_PAYS)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LeClientDuDevis.CLT_PAYS)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+@if (Model.LigneDeVentesDuDevi != null)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Details Devis</h3>
+            <p>
+                @Html.ActionLink("Ajouter", "Create", new { Controller = "LigneDeVentes", Action = "Create" })
+            </p>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Descr. Achat</th>
+                <th>Prix Achat</th>
+                <th>Descr. Vente</th>
+                <th>Prix Vente</th>
+            </tr>
+            @foreach (var item in Model.LigneDeVentesDuDevi)
+            {
+                <tr>
+                    <td>
+                        @item.ACHVNT_DESC_ACHAT
+                    </td>
+                    <td>
+                        @item.ACHVNT_PRIX_ACHAT
+                    </td>
+                    <td>
+                        @item.ACHVNT_DESC_VENTE
+                    </td>
+                    <td>
+                        @item.ACHVNT_PRIX_VENTE
+                    </td>
+                </tr>
+            }
+            <tr>
+                <th>Taux de change</th>
+                <th>Total Achat</th>
+                <th>Taux de Marge</th>
+                <th>Total Ventes</th>
+                <th>Total Devis</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Devis.DEVIS_TAUX_CHG)</td>
+                <td>@Html.DisplayFor(model => model.Devis.DEVIS_TOTALACHAT)</td>
+                <td>@Html.DisplayFor(model => model.Devis.DEVIS_TAUX_MRG)</td>
+                <td>@Html.DisplayFor(model => model.Devis.DEVIS_TOTALVENTE)</td>
+                <td>@Html.DisplayFor(model => model.Devis.DEVIS_TARIF)</td>
+            </tr>
+        </table>
+    </div>
+}
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Devis.DEVIS_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

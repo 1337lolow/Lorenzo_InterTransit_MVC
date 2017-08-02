@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.Devi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_ASSURANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_REF_FORM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_TARIF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_TAUX_CHG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_TAUX_MRG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_TOTALACHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_TOTALVENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_ETAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_REGLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVIS_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_ASSURANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_REF_FORM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_TARIF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_TAUX_CHG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_TAUX_MRG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_TOTALACHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_TOTALVENTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_ETAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_REGLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVIS_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DEVIS_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DEVIS_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DEVIS_ID })
+        </td>
+    </tr>
+}
+
+</table>

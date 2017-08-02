@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Lorenzo_InterTransit_MVC.Marchandise>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_PDS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_QTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_VALEURO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_DOUANE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCH_OBS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NatureMarchandise.NAT_MARCH_LIBELLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_PDS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_QTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_VALEURO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_DOUANE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARCH_OBS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MARCH_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MARCH_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MARCH_ID })
+        </td>
+    </tr>
+}
+
+</table>

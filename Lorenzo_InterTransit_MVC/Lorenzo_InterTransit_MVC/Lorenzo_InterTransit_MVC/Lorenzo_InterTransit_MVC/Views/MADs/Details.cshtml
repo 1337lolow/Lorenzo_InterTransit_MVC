@@ -1,0 +1,50 @@
+﻿@model Lorenzo_InterTransit_MVC.MAD
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MAD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAD_LIEU_ENLEV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAD_LIEU_ENLEV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAD_ADRES_ENLEV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAD_ADRES_ENLEV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAD_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAD_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAD_OBS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAD_OBS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAD_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
